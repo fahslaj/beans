@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ----- colors ----- */
+
+/* -- beans -- */
+$cocoa-brown: rgb(84, 66, 66);
+$cocoa-yellow: rgb(233, 208, 64);
+$field-green: rgb(123, 169, 123);
+
+/* ----- component styles ----- */
+$card-border-color: gray;
+
+$card-height: 240px;
+$card-width: 180px;
+$card-title-height: 40px;
+$card-footer-height: 40px;
+
+$card-border-radius-thickness: 2px;
+$card-border-radius: 5px;
+$card-inner-border-radius: $card-border-radius - $card-border-radius-thickness;
+
+$card-body-height: $card-height - $card-title-height - $card-footer-height - 2 * $card-border-radius-thickness;
+
+.Card {
+  height: $card-height;
+  width: $card-width;
+
+  border: $card-border-radius-thickness solid $card-border-color;
+  border-radius: $card-border-radius;
+}
+
+.Card-title {
+  border-top-left-radius: $card-inner-border-radius;
+  border-top-right-radius: $card-inner-border-radius;
+  border-collapse: collapse;
+
+  color: $cocoa-yellow;
+  background-color: $cocoa-brown;
+}
+
+.Card-body {
+  height: $card-body-height;
+
+  background-color: $cocoa-yellow;
+}
+
+.Card-frequency {
+  color: $cocoa-brown;
+}
+
+.Card-footer {
+  height: $card-footer-height;
+  border-bottom-left-radius: $card-inner-border-radius;
+  border-bottom-right-radius: $card-inner-border-radius;
+
+  background-color: $field-green;
+}
+
+.Card-rewards {
+
+}

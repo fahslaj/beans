@@ -1,0 +1,53 @@
+.App {
+  text-align: center; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+/* ----- colors ----- */
+/* -- beans -- */
+/* ----- component styles ----- */
+.Card {
+  height: 240px;
+  width: 180px;
+  border: 2px solid gray;
+  border-radius: 5px; }
+
+.Card-title {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-collapse: collapse;
+  color: #e9d040;
+  background-color: #544242; }
+
+.Card-body {
+  height: 156px;
+  background-color: #e9d040; }
+
+.Card-frequency {
+  color: #544242; }
+
+.Card-footer {
+  height: 40px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #7ba97b; }
