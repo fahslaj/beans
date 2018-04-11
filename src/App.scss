@@ -47,6 +47,7 @@ $card-border-radius: 5px;
 $card-inner-border-radius: $card-border-radius - $card-border-radius-thickness;
 
 $card-body-height: $card-height - $card-title-height - $card-footer-height - 2 * $card-border-radius-thickness;
+$card-text-padding: 5px;
 
 .Card {
   height: $card-height;
@@ -57,21 +58,31 @@ $card-body-height: $card-height - $card-title-height - $card-footer-height - 2 *
 }
 
 .Card-title {
+  height: $card-title-height;
   border-top-left-radius: $card-inner-border-radius;
   border-top-right-radius: $card-inner-border-radius;
-  border-collapse: collapse;
+
+  padding: $card-text-padding 0 $card-text-padding 0;
 
   color: $cocoa-yellow;
   background-color: $cocoa-brown;
 }
 
 .Card-body {
+  display: table-cell;
   height: $card-body-height;
+  width: $card-width;
+
+  vertical-align: middle;
+  text-align: center;
 
   background-color: $cocoa-yellow;
 }
 
 .Card-frequency {
+  font-size: 54pt;
+  display: inline-block;
+
   color: $cocoa-brown;
 }
 
@@ -80,9 +91,15 @@ $card-body-height: $card-height - $card-title-height - $card-footer-height - 2 *
   border-bottom-left-radius: $card-inner-border-radius;
   border-bottom-right-radius: $card-inner-border-radius;
 
+  padding: $card-text-padding 0 $card-text-padding;
+
   background-color: $field-green;
 }
 
 .Card-rewards {
+  display: flex;
+}
 
+.Card-reward {
+  flex-grow: 1;
 }

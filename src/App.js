@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import cardDescriptions from './assets/card-descriptions';
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class Hand extends Component {
     return (
       <div className="Hand">
         <div className="container">
-          <Card />
+          <Card card={cardDescriptions[0]} />
         </div>
       </div>
     );
@@ -32,19 +33,30 @@ class Hand extends Component {
 }
 
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.card = props.card;
+  }
+
   render() {
+    const rewards = [];
+    for (let i = 0; i < this.card.rewards.length; i++) {
+      const reward = this.card.rewards[i];
+      rewards.push(
+        <div className="Card-reward" key={reward.required}>
+          {reward.required}->{reward.payout}
+        </div>
+      );
+    }
+
     return (
       <div className="Card">
-        <div className="Card-title pt-2 pb-2">Cocoa Bean</div>
+        <div className="Card-title">{this.card.title}</div>
         <div className="Card-body">
-          <div className="Card-frequency">(4)</div>
+          <div className="Card-frequency">({this.card.frequency})</div>
         </div>
-        <div className="Card-footer pt-2 pb-2">
-          <div className="Card-rewards">
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-          </div>
+        <div className="Card-footer">
+          <div className="Card-rewards">{rewards}</div>
         </div>
       </div>
     );

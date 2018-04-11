@@ -1,0 +1,19 @@
+[{
+  "id": 10,
+  "title": "Cocoa Bean",
+  "frequency": 4,
+  "rewards": [
+    {
+      "required": 2,
+      "payout": 2
+    },
+    {
+      "required": 3,
+      "payout": 3
+    },
+    {
+      "required": 4,
+      "payout": 4
+    }
+  ]
+}]

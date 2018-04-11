@@ -33,21 +33,35 @@
   border-radius: 5px; }
 
 .Card-title {
+  height: 40px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  border-collapse: collapse;
+  padding: 5px 0 5px 0;
   color: #e9d040;
   background-color: #544242; }
 
 .Card-body {
+  display: table-cell;
   height: 156px;
+  width: 180px;
+  vertical-align: middle;
+  text-align: center;
   background-color: #e9d040; }
 
 .Card-frequency {
+  font-size: 54pt;
+  display: inline-block;
   color: #544242; }
 
 .Card-footer {
   height: 40px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  padding: 5px 0 5px;
   background-color: #7ba97b; }
+
+.Card-rewards {
+  display: flex; }
+
+.Card-reward {
+  flex-grow: 1; }
