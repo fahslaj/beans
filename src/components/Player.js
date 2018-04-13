@@ -3,8 +3,12 @@ import Hand from './Hand';
 
 class Player extends Component {
   render() {
-    return <div className="Hand">{cards}</div>;
+    return (
+      <div>
+        <Hand cards={[]} />
+      </div>
+    );
   }
 }
 
-export default Hand;
+export default Player;
