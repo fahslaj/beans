@@ -26,14 +26,14 @@ class Game extends Component {
       deckMap: {}
     };
 
-    this.buildDeck(props.cardDescriptions);
+    this.buildDeck();
     this.shuffleDeck();
-    this.draw(0);
   }
 
-  buildDeck(cardDescriptions) {
+  buildDeck() {
     const deck = [];
     const deckMap = {};
+    const cardDescriptions = this.props.cardDescriptions;
 
     for (let i = 0; i < cardDescriptions.length; i++) {
       for (let j = 0; j < cardDescriptions[i].frequency; j++) {
@@ -47,11 +47,11 @@ class Game extends Component {
       }
     }
 
-    this.setState({
+    this.state = {
       ...this.state,
       deck,
       deckMap
-    });
+    };
   }
 
   shuffleDeck() {
@@ -65,10 +65,10 @@ class Game extends Component {
       deck[j] = x;
     }
 
-    this.setState({
+    this.state = {
       ...this.state,
       deck
-    });
+    };
   }
 
   uproot(playerId, fieldIndex) {
@@ -124,7 +124,7 @@ class Game extends Component {
   }
 
   render() {
-    return <Hand cards={this.state.deck} />;
+    return <Hand cards={this.state.players[0].hand} />;
   }
 }
 
