@@ -29,11 +29,7 @@ class Hand extends Component {
   render() {
     const cards = [];
     for (let i = 0; i < this.cards.length; i++) {
-      cards.push(
-        <div className="container" key={this.cards[i].id}>
-          <Card card={this.cards[i]} />
-        </div>
-      );
+      cards.push(<Card card={this.cards[i]} key={this.cards[i].id} />);
     }
 
     return <div className="Hand">{cards}</div>;
@@ -63,7 +59,7 @@ class Card extends Component {
       const reward = this.card.rewards[i];
       rewards.push(
         <div className="Card-reward" key={reward.required}>
-          {reward.required}->{reward.payout}
+          {reward.required},{reward.payout}
         </div>
       );
     }
@@ -72,12 +68,12 @@ class Card extends Component {
       <div className="Card">
         <div
           className="Card-title"
-          style={{ color: this.secondary, backgroundColor: this.primary }}
+          style={{ color: this.primary, backgroundColor: this.secondary }}
         >
           {this.card.title}
         </div>
-        <div className="Card-body" style={{ backgroundColor: this.secondary }}>
-          <div className="Card-frequency" style={{ color: this.primary }}>
+        <div className="Card-body" style={{ backgroundColor: this.primary }}>
+          <div className="Card-frequency" style={{ color: this.secondary }}>
             ({this.card.frequency})
           </div>
         </div>

@@ -29,13 +29,10 @@
 
 /* ----- colors ----- */
 
-/* -- beans -- */
-// $cocoa-brown: rgb(84, 66, 66);
-// $cocoa-yellow: rgb(233, 208, 64);
-// $field-green: rgb(123, 169, 123);
+// bean colors in card descriptions
 
 /* ----- component styles ----- */
-$card-border-color: gray;
+$card-border-color: black;
 
 $card-height: 240px;
 $card-width: 180px;
@@ -52,6 +49,7 @@ $card-text-padding: 5px;
 .Card {
   height: $card-height;
   width: $card-width;
+  margin: 5px;
 
   border: $card-border-radius-thickness solid $card-border-color;
   border-radius: $card-border-radius;
@@ -64,8 +62,7 @@ $card-text-padding: 5px;
 
   padding: $card-text-padding 0 $card-text-padding 0;
 
-  // color: $cocoa-yellow;
-  // background-color: $cocoa-brown;
+  // colors added in component
 }
 
 .Card-body {
@@ -76,14 +73,14 @@ $card-text-padding: 5px;
   vertical-align: middle;
   text-align: center;
 
-  // background-color: $cocoa-yellow;
+  // colors added in component
 }
 
 .Card-frequency {
   font-size: 54pt;
   display: inline-block;
 
-  // color: $cocoa-brown;
+  // colors added in component
 }
 
 .Card-footer {
@@ -93,7 +90,7 @@ $card-text-padding: 5px;
 
   padding: $card-text-padding 0 $card-text-padding;
 
-  // background-color: $field-green;
+  // colors added in component
 }
 
 .Card-rewards {
@@ -102,4 +99,10 @@ $card-text-padding: 5px;
 
 .Card-reward {
   flex-grow: 1;
+}
+
+.Hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }

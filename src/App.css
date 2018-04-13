@@ -24,12 +24,12 @@
     transform: rotate(360deg); } }
 
 /* ----- colors ----- */
-/* -- beans -- */
 /* ----- component styles ----- */
 .Card {
   height: 240px;
   width: 180px;
-  border: 2px solid gray;
+  margin: 5px;
+  border: 2px solid black;
   border-radius: 5px; }
 
 .Card-title {
@@ -60,3 +60,8 @@
 
 .Card-reward {
   flex-grow: 1; }
+
+.Hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }

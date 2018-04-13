@@ -1,24 +1,130 @@
-[{
-  "id": 10,
-  "title": "Cocoa Bean",
-  "frequency": 4,
-  "rewards": [
-    {
-      "required": 2,
-      "payout": 2
-    },
-    {
-      "required": 3,
-      "payout": 3
-    },
-    {
-      "required": 4,
-      "payout": 4
+[
+  {
+    "id": 10,
+    "title": "Cocoa Bean",
+    "frequency": 4,
+    "rewards": [
+      {
+        "required": 2,
+        "payout": 2
+      },
+      {
+        "required": 3,
+        "payout": 3
+      },
+      {
+        "required": 4,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [84, 66, 66],
+      "secondary": [233, 208, 64],
+      "tertiary": [123, 169, 123]
     }
-  ],
-  "colors": {
-    "primary": [84, 66, 66],
-    "secondary": [233, 208, 64],
-    "tertiary": [123, 169, 123]
+  },
+  {
+    "id": 11,
+    "title": "Garden Bean",
+    "frequency": 6,
+    "rewards": [
+      {
+        "required": 2,
+        "payout": 2
+      },
+      {
+        "required": 3,
+        "payout": 3
+      }
+    ],
+    "colors": {
+      "primary": [201, 122,63],
+      "secondary": [64, 106, 86],
+      "tertiary": [91, 97, 129]
+    }
+  },
+  {
+    "id": 12,
+    "title": "Red Bean",
+    "frequency": 8,
+    "rewards": [
+      {
+        "required": 2,
+        "payout": 1
+      },
+      {
+        "required": 3,
+        "payout": 2
+      },
+      {
+        "required": 4,
+        "payout": 3
+      },
+      {
+        "required": 5,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [196, 58, 48],
+      "secondary": [54, 61, 105],
+      "tertiary": [239, 212, 105]
+    }
+  },
+  {
+    "id": 13,
+    "title": "Black-Eyed Bean",
+    "frequency": 10,
+    "rewards": [
+      {
+        "required": 2,
+        "payout": 1
+      },
+      {
+        "required": 4,
+        "payout": 2
+      },
+      {
+        "required": 5,
+        "payout": 3
+      },
+      {
+        "required": 6,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [230, 184, 151],
+      "secondary": [44, 51, 77],
+      "tertiary": [94, 137, 167]
+    }
+  },
+  {
+    "id": 14,
+    "title": "Soy Bean",
+    "frequency": 12,
+    "rewards": [
+      {
+        "required": 2,
+        "payout": 1
+      },
+      {
+        "required": 4,
+        "payout": 2
+      },
+      {
+        "required": 6,
+        "payout": 3
+      },
+      {
+        "required": 7,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [50, 120, 171],
+      "secondary": [230, 173, 92],
+      "tertiary": [118, 76, 86]
+    }
   }
-}]
+]
