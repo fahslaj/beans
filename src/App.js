@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import cardDescriptions from './assets/card-descriptions';
 
+const deck = [];
+
+for (let i = 0; i < cardDescriptions.length; i++) {
+  for (let j = 0; j < cardDescriptions[i].frequency; j++) {
+    deck.push(cardDescriptions[i]);
+  }
+}
+
 class App extends Component {
   render() {
     return (
@@ -14,7 +22,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Hand cards={cardDescriptions} />
+        <Hand cards={deck} />
       </div>
     );
   }

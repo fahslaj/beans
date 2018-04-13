@@ -20,7 +20,7 @@
     "colors": {
       "primary": [84, 66, 66],
       "secondary": [233, 208, 64],
-      "tertiary": [123, 169, 123]
+      "tertiary": [190, 58, 48]
     }
   },
   {
@@ -40,7 +40,7 @@
     "colors": {
       "primary": [201, 122,63],
       "secondary": [64, 106, 86],
-      "tertiary": [91, 97, 129]
+      "tertiary": [111, 117, 149]
     }
   },
   {
@@ -66,8 +66,8 @@
       }
     ],
     "colors": {
-      "primary": [196, 58, 48],
-      "secondary": [54, 61, 105],
+      "primary": [206, 58, 48],
+      "secondary": [74, 81, 125],
       "tertiary": [239, 212, 105]
     }
   },
@@ -125,6 +125,174 @@
       "primary": [50, 120, 171],
       "secondary": [230, 173, 92],
       "tertiary": [118, 76, 86]
+    }
+  },
+  {
+    "id": 15,
+    "title": "Green Bean",
+    "frequency": 14,
+    "rewards": [
+      {
+        "required": 3,
+        "payout": 1
+      },
+      {
+        "required": 5,
+        "payout": 2
+      },
+      {
+        "required": 6,
+        "payout": 3
+      },
+      {
+        "required": 7,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [116, 57, 79],
+      "secondary": [152, 159, 81],
+      "tertiary": [60, 106, 78]
+    }
+  },
+  {
+    "id": 16,
+    "title": "Stink Bean",
+    "frequency": 16,
+    "rewards": [
+      {
+        "required": 3,
+        "payout": 1
+      },
+      {
+        "required": 5,
+        "payout": 2
+      },
+      {
+        "required": 7,
+        "payout": 3
+      },
+      {
+        "required": 8,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [171, 172, 128],
+      "secondary": [163, 86, 58],
+      "tertiary": [214, 183, 75]
+    }
+  },
+  {
+    "id": 17,
+    "title": "Chili Bean",
+    "frequency": 18,
+    "rewards": [
+      {
+        "required": 3,
+        "payout": 1
+      },
+      {
+        "required": 6,
+        "payout": 2
+      },
+      {
+        "required": 8,
+        "payout": 3
+      },
+      {
+        "required": 9,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [234, 94, 61],
+      "secondary": [232, 201, 85],
+      "tertiary": [76, 101, 144]
+    }
+  },
+  {
+    "id": 18,
+    "title": "Blue Bean",
+    "frequency": 20,
+    "rewards": [
+      {
+        "required": 4,
+        "payout": 1
+      },
+      {
+        "required": 6,
+        "payout": 2
+      },
+      {
+        "required": 8,
+        "payout": 3
+      },
+      {
+        "required": 10,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [205, 105, 74],
+      "secondary": [72, 86, 151],
+      "tertiary": [141, 70, 64]
+    }
+  },
+  {
+    "id": 19,
+    "title": "Wax Bean",
+    "frequency": 22,
+    "rewards": [
+      {
+        "required": 4,
+        "payout": 1
+      },
+      {
+        "required": 7,
+        "payout": 2
+      },
+      {
+        "required": 9,
+        "payout": 3
+      },
+      {
+        "required": 11,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [100, 143, 97],
+      "secondary": [238, 212, 101],
+      "tertiary": [144, 180, 204]
+    }
+  },
+  {
+    "id": 20,
+    "title": "Coffee Bean",
+    "frequency": 24,
+    "rewards": [
+      {
+        "required": 4,
+        "payout": 1
+      },
+      {
+        "required": 7,
+        "payout": 2
+      },
+      {
+        "required": 10,
+        "payout": 3
+      },
+      {
+        "required": 12,
+        "payout": 4
+      }
+    ],
+    "colors": {
+      "primary": [149, 84, 66],
+      "secondary": [56, 39, 32],
+      "tertiary": [239, 206, 97]
     }
   }
 ]
