@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Hand from './Hand';
+import Player from './Player';
 
 class Game extends Component {
   constructor(props) {
@@ -156,7 +156,7 @@ class Game extends Component {
   }
 
   render() {
-    return <Hand cards={this.state.players[0].hand} />;
+    return <Player id={0} draw={() => this.state.deck[0]} />;
   }
 }
 
