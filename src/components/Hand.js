@@ -2,20 +2,14 @@ import React, { Component } from 'react';
 import Card from './Card';
 
 class Hand extends Component {
-  constructor(props) {
-    super(props);
-    this.cards = props.cards;
-    this.selected = props.selected;
-  }
-
   render() {
     const cards = [];
-    for (let i = 0; i < this.cards.length; i++) {
+    for (let i = 0; i < this.props.cards.length; i++) {
       cards.push(
         <Card
-          card={this.cards[i]}
-          key={this.cards[i].identity}
-          selected={e => this.selected(i)}
+          card={this.props.cards[i]}
+          key={this.props.cards[i].identity}
+          selected={e => this.props.selected(i)}
         />
       );
     }
