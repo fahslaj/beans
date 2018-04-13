@@ -1,0 +1,75 @@
+$card-border-color: black;
+
+$card-height: 240px;
+$card-width: 180px;
+$card-title-height: 40px;
+$card-footer-height: 40px;
+
+$card-border-radius-thickness: 2px;
+$card-border-radius: 5px;
+$card-inner-border-radius: $card-border-radius - $card-border-radius-thickness;
+
+$card-body-height: $card-height - $card-title-height - $card-footer-height - 2 * $card-border-radius-thickness;
+$card-text-padding: 5px;
+
+.Card {
+  height: $card-height;
+  width: $card-width;
+  margin: 5px;
+  padding: 0px;
+
+  border: $card-border-radius-thickness solid $card-border-color;
+  border-radius: $card-border-radius;
+}
+
+.Card-title {
+  height: $card-title-height;
+  border-top-left-radius: $card-inner-border-radius;
+  border-top-right-radius: $card-inner-border-radius;
+
+  padding: $card-text-padding 0 $card-text-padding 0;
+
+  // colors added in component
+}
+
+.Card-body {
+  display: table-cell;
+  height: $card-body-height;
+  width: $card-width;
+
+  vertical-align: middle;
+  text-align: center;
+
+  // colors added in component
+}
+
+.Card-frequency {
+  font-size: 54pt;
+  display: inline-block;
+
+  // colors added in component
+}
+
+.Card-footer {
+  height: $card-footer-height;
+  border-bottom-left-radius: $card-inner-border-radius;
+  border-bottom-right-radius: $card-inner-border-radius;
+
+  padding: $card-text-padding 0 $card-text-padding;
+
+  // colors added in component
+}
+
+.Card-rewards {
+  display: flex;
+}
+
+.Card-reward {
+  flex-grow: 1;
+}
+
+.Hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
