@@ -7,7 +7,10 @@ import Game from './services/Game';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.deck = Game().deck();
+    this.game = Game();
+    this.hand = this.game.hand(0);
+    this.game.register(() => (this.hand = this.game.hand(0)));
+    this.game.draw(0);
   }
 
   render() {
@@ -20,7 +23,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Hand cards={this.deck} selected={e => console.log(e)} />
+        <Hand cards={this.hand} selected={e => this.game.draw(0)} />
       </div>
     );
   }
