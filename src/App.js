@@ -3,11 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import cardDescriptions from './assets/card-descriptions';
 
+const deckMap = {};
 const deck = [];
 
 for (let i = 0; i < cardDescriptions.length; i++) {
   for (let j = 0; j < cardDescriptions[i].frequency; j++) {
-    deck.push(cardDescriptions[i]);
+    const card = cardDescriptions[i];
+    const identity = `${card.id}_${j}`;
+    deckMap[identity] = card;
+    deck.push({
+      ...card,
+      identity
+    });
   }
 }
 
@@ -22,7 +29,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Hand cards={deck} />
+        <Hand cards={deck} selected={e => console.log(e)} />
       </div>
     );
   }
@@ -32,12 +39,19 @@ class Hand extends Component {
   constructor(props) {
     super(props);
     this.cards = props.cards;
+    this.selected = props.selected;
   }
 
   render() {
     const cards = [];
     for (let i = 0; i < this.cards.length; i++) {
-      cards.push(<Card card={this.cards[i]} key={this.cards[i].id} />);
+      cards.push(
+        <Card
+          card={this.cards[i]}
+          key={this.cards[i].identity}
+          selected={e => this.selected(i)}
+        />
+      );
     }
 
     return <div className="Hand">{cards}</div>;
@@ -48,6 +62,7 @@ class Card extends Component {
   constructor(props) {
     super(props);
     this.card = props.card;
+    this.selected = props.selected;
 
     const colors = this.card.colors;
     this.primary = `rgb(${colors.primary[0]}, ${colors.primary[1]}, ${
@@ -73,7 +88,7 @@ class Card extends Component {
     }
 
     return (
-      <div className="Card">
+      <button className="Card" onClick={() => this.selected()}>
         <div
           className="Card-title"
           style={{ color: this.primary, backgroundColor: this.secondary }}
@@ -88,7 +103,7 @@ class Card extends Component {
         <div className="Card-footer" style={{ backgroundColor: this.tertiary }}>
           <div className="Card-rewards">{rewards}</div>
         </div>
-      </div>
+      </button>
     );
   }
 }
