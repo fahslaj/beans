@@ -4,10 +4,8 @@ import './Card.css';
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.card = props.card;
-    this.selected = props.selected;
 
-    const colors = this.card.colors;
+    const colors = this.props.card.colors;
     this.primary = `rgb(${colors.primary[0]}, ${colors.primary[1]}, ${
       colors.primary[2]
     })`;
@@ -21,8 +19,8 @@ class Card extends Component {
 
   render() {
     const rewards = [];
-    for (let i = 0; i < this.card.rewards.length; i++) {
-      const reward = this.card.rewards[i];
+    for (let i = 0; i < this.props.card.rewards.length; i++) {
+      const reward = this.props.card.rewards[i];
       rewards.push(
         <div className="Card-reward" key={reward.required}>
           {reward.required},{reward.payout}
@@ -31,16 +29,16 @@ class Card extends Component {
     }
 
     return (
-      <button className="Card" onClick={() => this.selected()}>
+      <button className="Card" onClick={() => this.props.selected()}>
         <div
           className="Card-title"
           style={{ color: this.primary, backgroundColor: this.secondary }}
         >
-          {this.card.title}
+          {this.props.card.title}
         </div>
         <div className="Card-body" style={{ backgroundColor: this.primary }}>
           <div className="Card-frequency" style={{ color: this.secondary }}>
-            ({this.card.frequency})
+            ({this.props.card.frequency})
           </div>
         </div>
         <div className="Card-footer" style={{ backgroundColor: this.tertiary }}>
