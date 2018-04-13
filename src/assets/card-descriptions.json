@@ -15,5 +15,10 @@
       "required": 4,
       "payout": 4
     }
-  ]
+  ],
+  "colors": {
+    "primary": [84, 66, 66],
+    "secondary": [233, 208, 64],
+    "tertiary": [123, 169, 123]
+  }
 }]

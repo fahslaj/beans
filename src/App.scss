@@ -30,9 +30,9 @@
 /* ----- colors ----- */
 
 /* -- beans -- */
-$cocoa-brown: rgb(84, 66, 66);
-$cocoa-yellow: rgb(233, 208, 64);
-$field-green: rgb(123, 169, 123);
+// $cocoa-brown: rgb(84, 66, 66);
+// $cocoa-yellow: rgb(233, 208, 64);
+// $field-green: rgb(123, 169, 123);
 
 /* ----- component styles ----- */
 $card-border-color: gray;
@@ -64,8 +64,8 @@ $card-text-padding: 5px;
 
   padding: $card-text-padding 0 $card-text-padding 0;
 
-  color: $cocoa-yellow;
-  background-color: $cocoa-brown;
+  // color: $cocoa-yellow;
+  // background-color: $cocoa-brown;
 }
 
 .Card-body {
@@ -76,14 +76,14 @@ $card-text-padding: 5px;
   vertical-align: middle;
   text-align: center;
 
-  background-color: $cocoa-yellow;
+  // background-color: $cocoa-yellow;
 }
 
 .Card-frequency {
   font-size: 54pt;
   display: inline-block;
 
-  color: $cocoa-brown;
+  // color: $cocoa-brown;
 }
 
 .Card-footer {
@@ -93,7 +93,7 @@ $card-text-padding: 5px;
 
   padding: $card-text-padding 0 $card-text-padding;
 
-  background-color: $field-green;
+  // background-color: $field-green;
 }
 
 .Card-rewards {
