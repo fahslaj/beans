@@ -5,6 +5,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numPlayers: 2,
       players: {
         [0]: {
           id: 0,
@@ -28,6 +29,7 @@ class Game extends Component {
 
     this.buildDeck();
     this.shuffleDeck();
+    this.deal();
   }
 
   buildDeck() {
@@ -67,6 +69,36 @@ class Game extends Component {
 
     this.state = {
       ...this.state,
+      deck
+    };
+  }
+
+  deal() {
+    let deck = [...this.state.deck];
+    let numCardsToDeal = this.state.numPlayers * 5;
+    let hands = new Array(this.state.numPlayers);
+
+    for (let i = 0; i < this.state.numPlayers; i++) {
+      hands[i] = [];
+    }
+
+    let nextPlayer = 0;
+
+    while (numCardsToDeal > 0) {
+      hands[nextPlayer].push(deck.pop());
+      numCardsToDeal--;
+      nextPlayer = (nextPlayer + 1) % this.state.numPlayers;
+    }
+
+    const players = {};
+
+    for (let i = 0; i < this.state.numPlayers; i++) {
+      players[i] = { ...this.state.players[i], hand: hands[i] };
+    }
+
+    this.state = {
+      ...this.state,
+      players,
       deck
     };
   }

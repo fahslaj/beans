@@ -1,9 +1,9 @@
 $card-border-color: black;
 
-$card-height: 240px;
-$card-width: 180px;
-$card-title-height: 40px;
-$card-footer-height: 40px;
+$card-height: 200px;
+$card-width: 150px;
+$card-title-height: $card-height / 6;
+$card-footer-height: $card-title-height;
 
 $card-border-radius-thickness: 2px;
 $card-border-radius: 5px;
