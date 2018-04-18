@@ -149,7 +149,12 @@ class Game extends Component {
   }
 
   render() {
-    return <Player id={0} draw={id => this.draw(id)} />;
+    const players = [];
+    for (let i = 0; i < this.props.numPlayers; i++) {
+      players.push(<Player key={i} id={i} draw={id => this.draw(i)} />);
+    }
+
+    return <div className="Game">{players}</div>;
   }
 }
 

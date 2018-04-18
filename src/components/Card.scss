@@ -1,7 +1,7 @@
 $card-border-color: black;
 
-$card-height: 200px;
-$card-width: 150px;
+$card-height: 120px;
+$card-width: $card-height / 4 * 3;
 $card-title-height: $card-height / 6;
 $card-footer-height: $card-title-height;
 
@@ -10,7 +10,11 @@ $card-border-radius: 5px;
 $card-inner-border-radius: $card-border-radius - $card-border-radius-thickness;
 
 $card-body-height: $card-height - $card-title-height - $card-footer-height - 2 * $card-border-radius-thickness;
-$card-text-padding: 5px;
+$card-text-padding: $card-title-height / 10;
+
+$card-title-font-size: $card-title-height / 1.8;
+$card-body-font-size: $card-body-height / 1.8;
+$card-footer-font-size: $card-footer-height / 1.8;
 
 .Card {
   height: $card-height;
@@ -23,13 +27,12 @@ $card-text-padding: 5px;
 }
 
 .Card-title {
+  font-size: $card-title-font-size;
   height: $card-title-height;
   border-top-left-radius: $card-inner-border-radius;
   border-top-right-radius: $card-inner-border-radius;
 
   padding: $card-text-padding 0 $card-text-padding 0;
-
-  // colors added in component
 }
 
 .Card-body {
@@ -39,25 +42,20 @@ $card-text-padding: 5px;
 
   vertical-align: middle;
   text-align: center;
-
-  // colors added in component
 }
 
 .Card-frequency {
-  font-size: 54pt;
+  font-size: $card-body-font-size;
   display: inline-block;
-
-  // colors added in component
 }
 
 .Card-footer {
+  font-size: $card-footer-font-size;
   height: $card-footer-height;
   border-bottom-left-radius: $card-inner-border-radius;
   border-bottom-right-radius: $card-inner-border-radius;
-
+  
   padding: $card-text-padding 0 $card-text-padding;
-
-  // colors added in component
 }
 
 .Card-rewards {

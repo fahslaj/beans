@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Game cardDescriptions={cardDescriptions} />
+        <Game cardDescriptions={cardDescriptions} numPlayers={4} />
       </div>
     );
   }

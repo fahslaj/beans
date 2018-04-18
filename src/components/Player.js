@@ -5,7 +5,6 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
       hand: [],
       plots: 2,
       field: [[], []],
@@ -14,7 +13,7 @@ class Player extends Component {
   }
 
   draw() {
-    const card = this.props.draw(this.state.id);
+    const card = this.props.draw();
     const hand = [...this.state.hand, card];
 
     this.setState({
