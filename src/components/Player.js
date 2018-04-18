@@ -25,8 +25,10 @@ class Player extends Component {
 
   render() {
     return (
-      <div className="Player">
-        <button onClick={() => this.draw()}>Draw</button>
+      <div>
+        <div className="Actions">
+          <button onClick={() => this.draw()}>Draw</button>
+        </div>
         <Hand cards={this.state.hand} />
       </div>
     );
