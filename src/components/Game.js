@@ -139,24 +139,17 @@ class Game extends Component {
   }
 
   draw(playerId) {
-    const hand = [...this.state.players[playerId].hand];
     const deck = [...this.state.deck];
-    hand.push(deck.pop());
+    const card = deck.pop();
     this.setState({
       ...this.state,
-      deck,
-      players: {
-        ...this.state.players,
-        [playerId]: {
-          ...this.state.players[playerId],
-          hand
-        }
-      }
+      deck
     });
+    return card;
   }
 
   render() {
-    return <Player id={0} draw={() => this.state.deck[0]} />;
+    return <Player id={0} draw={id => this.draw(id)} />;
   }
 }
 

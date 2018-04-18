@@ -14,7 +14,7 @@ class Player extends Component {
   }
 
   draw() {
-    const card = this.props.draw();
+    const card = this.props.draw(this.state.id);
     const hand = [...this.state.hand, card];
 
     this.setState({
