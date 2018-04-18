@@ -4,6 +4,7 @@ $card-height: 120px;
 $card-width: $card-height / 4 * 3;
 $card-title-height: $card-height / 6;
 $card-footer-height: $card-title-height;
+$card-margin: 5px;
 
 $card-border-radius-thickness: 2px;
 $card-border-radius: 5px;
@@ -19,7 +20,7 @@ $card-footer-font-size: $card-footer-height / 1.8;
 .Card {
   height: $card-height;
   width: $card-width;
-  margin: 5px;
+  margin: $card-margin;
   padding: 0px;
 
   border: $card-border-radius-thickness solid $card-border-color;

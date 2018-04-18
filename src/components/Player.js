@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Player.css';
 import Hand from './Hand';
 
 class Player extends Component {
@@ -24,7 +25,7 @@ class Player extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Player">
         <button onClick={() => this.draw()}>Draw</button>
         <Hand cards={this.state.hand} />
       </div>
