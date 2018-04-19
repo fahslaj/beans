@@ -1,7 +1,9 @@
+@import '../theme.scss';
+
 .Actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 
-  background-color: rgb(91, 155, 136);
+  background-color: $actions-bar-color;
 }

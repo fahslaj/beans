@@ -27,7 +27,9 @@ class Player extends Component {
     return (
       <div>
         <div className="Actions">
-          <button onClick={() => this.draw()}>Draw</button>
+          <button className="Primary-Button" onClick={() => this.draw()}>
+            Draw
+          </button>
         </div>
         <Hand cards={this.state.hand} />
       </div>
