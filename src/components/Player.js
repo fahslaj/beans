@@ -26,7 +26,7 @@ class Player extends Component {
   render() {
     return (
       <div>
-        <div className="Actions">
+        <div className="Player-Actions">
           <button className="Primary-Button" onClick={() => this.draw()}>
             Draw
           </button>

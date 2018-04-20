@@ -155,7 +155,12 @@ class Game extends Component {
       players.push(<Player key={i} id={i} draw={id => this.draw(i)} />);
     }
 
-    return <div className="Game">{players}</div>;
+    return (
+      <div>
+        <div className="Game-Actions">Hello</div>
+        <div className="Game">{players}</div>
+      </div>
+    );
   }
 }
 
