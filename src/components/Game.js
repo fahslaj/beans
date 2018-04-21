@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Game.css';
-import Player from './Player';
+import PlayerActions from './Player-Actions';
+import Hand from './Hand';
 
 class Game extends Component {
   constructor(props) {
@@ -142,23 +143,37 @@ class Game extends Component {
   draw(playerId) {
     const deck = [...this.state.deck];
     const card = deck.pop();
+    const hand = [...this.state.players[playerId].hand, card];
+
     this.setState({
       ...this.state,
-      deck
+      deck,
+      players: {
+        ...this.state.players,
+        [playerId]: {
+          ...this.state.players[playerId],
+          hand
+        }
+      }
     });
-    return card;
   }
 
   render() {
-    const players = [];
-    for (let i = 0; i < this.props.numPlayers; i++) {
-      players.push(<Player key={i} id={i} draw={id => this.draw(i)} />);
-    }
-
     return (
-      <div>
-        <div className="Game-Actions">Hello</div>
-        <div className="Game">{players}</div>
+      <div className="Game">
+        <PlayerActions draw={() => this.draw(1)} />
+        <Hand cards={this.state.players[1].hand} />
+        <div className="Center-Row-Container">
+          {this.state.deck.length}
+          {/* <Field />
+          <div className="Center-Container">
+            <Deck />
+            <DiscardPile />
+          </div>
+          <Field /> */}
+        </div>
+        <PlayerActions draw={() => this.draw(0)} />
+        <Hand cards={this.state.players[0].hand} />
       </div>
     );
   }

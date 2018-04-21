@@ -1,15 +1,41 @@
-@import '../theme.scss';
+@import './Card.scss';
+@import './Hand.scss';
 
-.Game {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2px;
-}
+// ----- 4 Player dimensions: -----
+// $hand-container-width: $card-height;
+// $field-container-width: $card-height / 4 * 10;
+// $center-container-width: $card-height / 2 * 3;
+
+// .Game {
+//   display: grid;
+//   grid-template-columns: $hand-container-width $field-container-width $center-container-width $field-container-width $hand-container-width;
+//   grid-template-rows: $hand-container-width $field-container-width $center-container-width $field-container-width $hand-container-width;
+// }
+
+// ----- 2 Player dimensions: -----
+// $hand-container-height: $min-hand-height + 36px;
+// $field-container-height: (8 + 3) * ($card-height / 4);
+// $center-container-height: $card-height / 2 * 3;
+
+// .Game {
+//   display: grid;
+//   grid-template-rows: $hand-container-height $field-container-height $center-container-height $field-container-height $hand-container-height;
+// }
+
+// ----- Flexbox: -----
+// .Game {
+//   display: flex;
+//   flex-direction: row;
+// }
+
+// .Game div {
+//   flex-grow: 1;
+// }
 
 .Game-Actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  
+
   background-color: $game-actions-color;
 }
