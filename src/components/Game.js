@@ -189,7 +189,6 @@ class Game extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="Game">
         <PlayerActions draw={() => this.draw(1)} />

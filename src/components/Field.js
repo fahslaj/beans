@@ -10,13 +10,10 @@ class Field extends Component {
       cards.push(
         <div
           className="Field-Card-Container"
-          style={{ top: `${-100 * i}px`, 'z-index': i }}
+          key={card.identity}
+          style={{ top: `${-100 * i}px`, zIndex: i }}
         >
-          <Card
-            card={card}
-            key={card.identity}
-            selected={() => this.props.uproot()}
-          />
+          <Card card={card} selected={() => this.props.uproot()} />
         </div>
       );
     }
