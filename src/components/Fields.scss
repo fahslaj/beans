@@ -1,0 +1,15 @@
+@import './Card.scss';
+
+$min-hand-width: $card-width + ($card-border-radius-thickness + $card-margin) * 2;
+$min-hand-height: $card-height + ($card-border-radius-thickness + $card-margin) * 2;
+
+.Fields {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  background-color: green;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Game.css';
 import PlayerActions from './Player-Actions';
 import Hand from './Hand';
+import Fields from './Fields';
 
 class Game extends Component {
   constructor(props) {
@@ -17,14 +18,14 @@ class Game extends Component {
           id: 0,
           hand: [],
           plots: 2,
-          field: [[], []],
+          fields: [[], []],
           coins: 0
         },
         '1': {
           id: 1,
           hand: [],
           plots: 2,
-          field: [[], []],
+          fields: [[], []],
           coins: 0
         }
       },
@@ -101,13 +102,13 @@ class Game extends Component {
       throw new Error(`Error: Out of bounds uproot: ${fieldIndex}`);
     }
 
-    if (player.field[fieldIndex].length === 0) {
-      throw new Error(`Error: Nothing to uproot in plot: ${fieldIndex}`);
+    if (player.fields[fieldIndex].length === 0) {
+      throw new Error(`Error: Nothing to uproot in field: ${fieldIndex}`);
     }
 
-    const uprooted = player.field[fieldIndex];
-    player.field = [...player.field];
-    player.field[fieldIndex] = [];
+    const uprooted = player.fields[fieldIndex];
+    player.fields = [...player.field];
+    player.fields[fieldIndex] = [];
 
     let payout = 0;
     for (let i = 0; i < uprooted[0].rewards; i++) {
@@ -155,12 +156,18 @@ class Game extends Component {
         <Hand cards={this.state.players[1].hand} />
         <div className="Center-Row-Container">
           {this.state.deck.length}
-          {/* <Field />
-          <div className="Center-Container">
+          <Fields
+            fields={this.state.players[1].fields}
+            uproot={index => this.uproot(1, index)}
+          />
+          {/* <div className="Center-Container">
             <Deck />
             <DiscardPile />
-          </div>
-          <Field /> */}
+          </div> */}
+          <Fields
+            fields={this.state.players[0].fields}
+            uproot={index => this.uproot(0, index)}
+          />
         </div>
         <PlayerActions draw={() => this.draw(0)} />
         <Hand cards={this.state.players[0].hand} />
