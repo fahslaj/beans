@@ -6,17 +6,21 @@ import Hand from './Hand';
 class Game extends Component {
   constructor(props) {
     super(props);
+
+    const { deck, deckMap } = this.buildDeck();
+    this.shuffle(deck);
+
     this.state = {
       numPlayers: 2,
       players: {
-        [0]: {
+        '0': {
           id: 0,
           hand: [],
           plots: 2,
           field: [[], []],
           coins: 0
         },
-        [1]: {
+        '1': {
           id: 1,
           hand: [],
           plots: 2,
@@ -25,12 +29,9 @@ class Game extends Component {
         }
       },
       discardPile: [],
-      deck: [],
-      deckMap: {}
+      deck,
+      deckMap
     };
-
-    this.buildDeck();
-    this.shuffleDeck();
     this.deal();
   }
 
@@ -51,16 +52,10 @@ class Game extends Component {
       }
     }
 
-    this.state = {
-      ...this.state,
-      deck,
-      deckMap
-    };
+    return { deck, deckMap };
   }
 
-  shuffleDeck() {
-    const deck = [...this.state.deck];
-
+  shuffle(deck) {
     let j, x, i;
     for (i = deck.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * (i + 1));
@@ -68,11 +63,6 @@ class Game extends Component {
       deck[i] = deck[j];
       deck[j] = x;
     }
-
-    this.state = {
-      ...this.state,
-      deck
-    };
   }
 
   deal() {
@@ -108,11 +98,11 @@ class Game extends Component {
   uproot(playerId, fieldIndex) {
     const player = { ...this.state.players[playerId] };
     if (fieldIndex >= player.plots) {
-      throw `Error: Out of bounds uproot: ${fieldIndex}`;
+      throw new Error(`Error: Out of bounds uproot: ${fieldIndex}`);
     }
 
     if (player.field[fieldIndex].length === 0) {
-      throw `Error: Nothing to uproot in plot: ${fieldIndex}`;
+      throw new Error(`Error: Nothing to uproot in plot: ${fieldIndex}`);
     }
 
     const uprooted = player.field[fieldIndex];
