@@ -10,7 +10,7 @@ class Hand extends Component {
         <Card
           card={this.props.cards[i]}
           key={this.props.cards[i].identity}
-          selected={e => this.props.selected(i)}
+          selected={() => this.props.selected(i)}
         />
       );
     }

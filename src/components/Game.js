@@ -149,16 +149,58 @@ class Game extends Component {
     });
   }
 
+  play(playerId, handIndex, fieldIndex) {
+    const hand = [...this.state.players[playerId].hand];
+
+    if (hand.length <= handIndex) {
+      throw new Error(
+        `Error: Can't play card outside of hand: ${hand.length} ${handIndex}`
+      );
+    }
+
+    const card = hand[handIndex];
+    hand.splice(handIndex, 1);
+
+    const field = [...this.state.players[playerId].fields[fieldIndex]];
+    if (field.length > 0 && field[0].id !== card.id) {
+      throw new Error(
+        `Error: Can't play a card into a field with a different type of bean: ${
+          field[0].title
+        } ${card.title}`
+      );
+    }
+
+    field.push(card);
+
+    const fields = [...this.state.players[playerId].fields];
+    fields[fieldIndex] = field;
+
+    this.setState({
+      ...this.state,
+      players: {
+        ...this.state.players,
+        [playerId]: {
+          ...this.state.players[playerId],
+          hand,
+          fields
+        }
+      }
+    });
+  }
+
   render() {
+    console.log(this.state);
     return (
       <div className="Game">
         <PlayerActions draw={() => this.draw(1)} />
-        <Hand cards={this.state.players[1].hand} />
+        <Hand
+          cards={this.state.players[1].hand}
+          selected={index => this.play(1, index, 0)}
+        />
         <div className="Center-Row-Container">
-          {this.state.deck.length}
           <Fields
             fields={this.state.players[1].fields}
-            uproot={index => this.uproot(1, index)}
+            uproot={index => this.uproot(1, index, 0)}
           />
           {/* <div className="Center-Container">
             <Deck />
@@ -166,11 +208,14 @@ class Game extends Component {
           </div> */}
           <Fields
             fields={this.state.players[0].fields}
-            uproot={index => this.uproot(0, index)}
+            uproot={index => this.uproot(0, index, 0)}
           />
         </div>
         <PlayerActions draw={() => this.draw(0)} />
-        <Hand cards={this.state.players[0].hand} />
+        <Hand
+          cards={this.state.players[0].hand}
+          selected={index => this.play(0, index, 0)}
+        />
       </div>
     );
   }
