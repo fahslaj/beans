@@ -8,11 +8,16 @@ class Field extends Component {
     for (let i = 0; i < this.props.cards.length; i++) {
       const card = this.props.cards[i];
       cards.push(
-        <Card
-          card={card}
-          key={card.identity}
-          selected={() => this.props.uproot()}
-        />
+        <div
+          className="Field-Card-Container"
+          style={{ top: `${-100 * i}px`, 'z-index': i }}
+        >
+          <Card
+            card={card}
+            key={card.identity}
+            selected={() => this.props.uproot()}
+          />
+        </div>
       );
     }
 

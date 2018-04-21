@@ -1,5 +1,6 @@
 @import './Card.scss';
 
+$card-margin: 5px;
 $min-hand-width: $card-width + ($card-border-radius-thickness + $card-margin) * 2;
 $min-hand-height: $card-height + ($card-border-radius-thickness + $card-margin) * 2;
 
@@ -15,4 +16,8 @@ $min-hand-height: $card-height + ($card-border-radius-thickness + $card-margin) 
   justify-content: space-evenly;
 
   background-color: teal;
+}
+
+.Hand .Card {
+  margin: $card-margin;
 }

@@ -1,6 +1,21 @@
-@import './Hand.scss';
+@import './Card.scss';
 
 .Field {
-  min-width: $min-hand-width;
+  min-width: $card-width;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+
   background-color: brown;
+}
+
+.Field-Card-Container {
+  flex: 1 0 0;
+  overflow-y: hidden;
+
+  border-radius: $card-border-radius $card-border-radius 0 0;
+}
+
+.Card-Container:last-child {
+  flex: 0 0 auto;
 }
