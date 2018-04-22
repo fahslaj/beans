@@ -9,11 +9,11 @@ $card-border-radius-thickness: 2px;
 $card-border-radius: 5px;
 $card-inner-border-radius: $card-border-radius - $card-border-radius-thickness;
 
-$card-body-height: $card-height - $card-title-height - $card-footer-height - 2 * $card-border-radius-thickness;
+$card-body-height: $card-height - $card-title-height - $card-footer-height - 4 * $card-border-radius-thickness;
 $card-text-padding: $card-title-height / 10;
 
 $card-title-font-size: $card-title-height / 1.8;
-$card-body-font-size: $card-body-height / 1.8;
+$card-body-font-size: $card-body-height / 2;
 $card-footer-font-size: $card-footer-height / 1.8;
 
 .Card {
@@ -31,7 +31,7 @@ $card-footer-font-size: $card-footer-height / 1.8;
   border-top-left-radius: $card-inner-border-radius;
   border-top-right-radius: $card-inner-border-radius;
 
-  padding: $card-text-padding 0 $card-text-padding 0;
+  padding-top: $card-text-padding;
 }
 
 .Card-body {
@@ -54,7 +54,7 @@ $card-footer-font-size: $card-footer-height / 1.8;
   border-bottom-left-radius: $card-inner-border-radius;
   border-bottom-right-radius: $card-inner-border-radius;
   
-  padding: $card-text-padding 0 $card-text-padding;
+  padding-top: $card-text-padding;
 }
 
 .Card-rewards {
