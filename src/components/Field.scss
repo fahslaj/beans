@@ -13,9 +13,14 @@
   flex: 1 0 0;
   overflow-y: hidden;
 
+  margin-bottom: -5px;
+
   border-radius: $card-border-radius $card-border-radius 0 0;
 }
 
-.Card-Container:last-child {
+.Field-Card-Container:last-child {
   flex: 0 0 auto;
+  height: $card-height;
+  
+  margin-bottom: 0px;
 }
