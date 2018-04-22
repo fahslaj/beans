@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Game.css';
 import PlayerActions from './Player-Actions';
+import Deck from './Deck';
 import Hand from './Hand';
 import Fields from './Fields';
 
@@ -201,10 +202,10 @@ class Game extends Component {
             fields={this.state.players[1].fields}
             uproot={index => this.uproot(1, index, 0)}
           />
-          {/* <div className="Center-Container">
-            <Deck />
-            <DiscardPile />
-          </div> */}
+          <div className="Center-Container">
+            <Deck cards={this.state.deck} />
+            {/* <DiscardPile /> */}
+          </div>
           <Fields
             fields={this.state.players[0].fields}
             uproot={index => this.uproot(0, index, 0)}
