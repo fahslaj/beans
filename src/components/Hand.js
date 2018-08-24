@@ -1,22 +1,33 @@
-import React, { Component } from 'react';
-import './Hand.css';
+import React from 'react';
+import { connect } from 'react-redux';
+import { selectCard } from '../store/actions';
 import Card from './Card';
+import './Hand.css';
 
-class Hand extends Component {
-  render() {
-    const cards = [];
-    for (let i = 0; i < this.props.cards.length; i++) {
-      cards.push(
-        <Card
-          card={this.props.cards[i]}
-          key={this.props.cards[i].identity}
-          selected={() => this.props.selected(i)}
-        />
-      );
-    }
-
-    return <div className="Hand">{cards}</div>;
+const Hand = ({ selectCard, cards }) => {
+  const cardDivs = [];
+  for (let i = 0; i < cards.length; i++) {
+    cardDivs.push(
+      <Card
+        card={cards[i]}
+        key={cards[i].identity}
+        selected={() => selectCard(i)}
+      />
+    );
   }
+
+  return <div className="Hand">{cardDivs}</div>;
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    cards: state.players[ownProps.playerId].hand
+  };
 }
 
-export default Hand;
+const mapDispatchToProps = { selectCard };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Hand);

@@ -1,39 +1,3 @@
-// const { deck, deckMap } = this.buildDeck();
-
-// const gameState = {
-//   numPlayers: 2,
-//   players: {
-//     '0': {
-//       id: 0,
-//       hand: [],
-//       plots: 2,
-//       fields: [[], []],
-//       coins: 0
-//     },
-//     '1': {
-//       id: 1,
-//       hand: [],
-//       plots: 2,
-//       fields: [[], []],
-//       coins: 0
-//     }
-//   },
-//   discardPile: [],
-//   deck,
-//   deckMap
-// };
-
-// const shuffle = deck => {
-//   const deckCopy = deck.slice();
-//   let j, x, i;
-//   for (i = deck.length - 1; i > 0; i--) {
-//     j = Math.floor(Math.random() * (i + 1));
-//     deckCopy[i] = deck[j];
-//     deckCopy[j] = deck[i];
-//   }
-//   return deckCopy;
-// };
-
 // const deal = state => {
 //   let deck = [...state.deck];
 //   let numCardsToDeal = state.numPlayers * 5;
@@ -99,24 +63,6 @@
 //   });
 // }
 
-// draw(playerId) {
-//   const deck = [...this.state.deck];
-//   const card = deck.pop();
-//   const hand = [...this.state.players[playerId].hand, card];
-
-//   this.setState({
-//     ...this.state,
-//     deck,
-//     players: {
-//       ...this.state.players,
-//       [playerId]: {
-//         ...this.state.players[playerId],
-//         hand
-//       }
-//     }
-//   });
-// }
-
 // play(playerId, handIndex, fieldIndex) {
 //   const hand = [...this.state.players[playerId].hand];
 
@@ -154,24 +100,4 @@
 //       }
 //     }
 //   });
-// }
-
-// buildDeck() {
-//   const deck = [];
-//   const deckMap = {};
-//   const cardDescriptions = this.props.cardDescriptions;
-
-//   for (let i = 0; i < cardDescriptions.length; i++) {
-//     for (let j = 0; j < cardDescriptions[i].frequency; j++) {
-//       const card = cardDescriptions[i];
-//       const identity = `${card.id}_${j}`;
-//       deckMap[identity] = card;
-//       deck.push({
-//         ...card,
-//         identity
-//       });
-//     }
-//   }
-
-//   return { deck, deckMap };
 // }

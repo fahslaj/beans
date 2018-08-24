@@ -1,16 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { drawCard } from '../store/actions';
+import { connect } from 'react-redux';
 import './Player-Actions.css';
 
-class PlayerActions extends Component {
-  render() {
-    return (
-      <div className="Player-Actions">
-        <button className="Primary-Button" onClick={() => this.props.draw()}>
-          Draw
-        </button>
-      </div>
-    );
-  }
+const PlayerActions = ({ drawCard }) => (
+  <div className="Player-Actions">
+    <button className="Primary-Button" onClick={() => drawCard()}>
+      Draw
+    </button>
+  </div>
+);
+
+const mapDispatchToProps = { drawCard };
+
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  return Object.assign({}, ownProps, {
+    drawCard: () => dispatchProps.drawCard(ownProps.playerId)
+  });
 }
 
-export default PlayerActions;
+export default connect(
+  null,
+  mapDispatchToProps,
+  mergeProps
+)(PlayerActions);
