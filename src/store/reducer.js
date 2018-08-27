@@ -1,5 +1,6 @@
 import { SELECT_CARD, DRAW_CARD } from './actions';
 import { buildDeck } from '../game/deck';
+import { shuffle } from '../game/util';
 
 const { deck, deckMap } = buildDeck();
 export const initialState = {
@@ -24,7 +25,7 @@ export const initialState = {
     }
   },
   discardPile: [],
-  deck,
+  deck: shuffle(deck),
   deckMap
 };
 
