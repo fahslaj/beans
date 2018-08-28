@@ -8,13 +8,6 @@ import { connect } from 'react-redux';
 
 // TODO: PropTypes?
 // class Game extends Component {
-//   render() {
-//     return (
-//       <div className="Game">
-//         <PlayerActions draw={() => this.props.drawCard(1)} />
-//         <Hand playerId={1} />
-//       </div>
-//     );
 //     // const state = this.props.store.getState();
 //     // return (
 //     //   <div className="Game">
@@ -56,6 +49,19 @@ const Game = () => (
   <div className="Game">
     <PlayerActions playerId={1} />
     <Hand playerId={1} />
+    <div className="Center-Row-Container">
+      <Fields playerId={1} />
+      <div className="Center-Container">
+        <Deck
+          cards={[]}
+          // cards={this.state.deck}
+        />
+        {/* <DiscardPile /> */}
+      </div>
+      <Fields playerId={0} />
+    </div>
+    <PlayerActions playerId={0} />
+    <Hand playerId={0} />
   </div>
 );
 
