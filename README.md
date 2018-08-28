@@ -1,3 +1,6 @@
+# beans
+An implementation of a simple card game involving the drawing, playing, and uprooting of beans. Implemented in React with React-Redux and with no major CSS libraries.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
